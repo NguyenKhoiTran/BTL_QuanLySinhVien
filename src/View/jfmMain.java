@@ -242,7 +242,7 @@ public class jfmMain extends javax.swing.JFrame {
         jmeTK.setText("Tìm Kiếm");
 
         jmeMaSvTk.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jmeMaSvTk.setText("Tìm kiếm theo mã sv");
+        jmeMaSvTk.setText("Tra cứu thông tin sinh viên");
         jmeMaSvTk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jmeMaSvTkActionPerformed(evt);
@@ -251,7 +251,7 @@ public class jfmMain extends javax.swing.JFrame {
         jmeTK.add(jmeMaSvTk);
 
         jmeDiemTk.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jmeDiemTk.setText("Tra cứu điểm sv");
+        jmeDiemTk.setText("Tra cứu điểm sinh viên");
         jmeDiemTk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jmeDiemTkActionPerformed(evt);

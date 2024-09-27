@@ -492,16 +492,24 @@ import javax.print.attribute.standard.OrientationRequested;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        MessageFormat header = new MessageFormat("Danh sách điểm sinh viên");
+        MessageFormat header = new MessageFormat("Danh sách sinh viên");
         MessageFormat footer = new MessageFormat("{0,number,integer}");
         try {
             PrintRequestAttributeSet set = new HashPrintRequestAttributeSet();
-         set.add(OrientationRequested.LANDSCAPE);
-         jtbDiem.print(JTable.PrintMode.FIT_WIDTH,header,footer,true,set,true);
-         JOptionPane.showMessageDialog(null, "In thành công");
-         
-         
+         set.add(OrientationRequested.PORTRAIT);
+         int confirmPrint = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn in?", "Xác nhận in", JOptionPane.YES_NO_OPTION);
+         if (confirmPrint == JOptionPane.YES_OPTION) {
+        try {
+            jtbDiem.print(JTable.PrintMode.FIT_WIDTH, header, footer, true, set, true);
+            JOptionPane.showMessageDialog(null, "In thành công");
         } catch (HeadlessException | PrinterException e) {
+            System.out.println(e);
+            JOptionPane.showMessageDialog(null, "In không thành công");
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "Bạn đã hủy lệnh in");
+    }           
+        } catch (HeadlessException e) {
             System.out.println(e);
             JOptionPane.showMessageDialog(null, "In không thành công");
         }
